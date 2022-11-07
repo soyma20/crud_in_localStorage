@@ -16,5 +16,10 @@ export class CarService {
     this.storageService.saveCars(cars);
   }
 
+  readCars(): ICar[] {
+    return this.storageService.getCars();
+  }
+
+
 
 }
