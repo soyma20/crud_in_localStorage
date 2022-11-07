@@ -31,6 +31,15 @@ export class CarService {
     this.storageService.saveCars(cars)
   }
 
+  deleteCar(id: number): void {
+    const cars = this.storageService.getCars();
+    console.log(cars)
+    for (let i = 0; i < cars.length; i++) {
+      if (id === i) delete cars[i];
+    }
+    console.log(cars)
+    this.storageService.saveCars(cars)
 
+  }
 
 }
