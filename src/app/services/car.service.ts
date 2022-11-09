@@ -1,4 +1,5 @@
 import {Injectable} from '@angular/core';
+
 import {ICar} from "../interfaces/icar";
 import {StorageService} from "./storage.service";
 
@@ -11,7 +12,11 @@ export class CarService {
   }
 
   create(car: ICar): void {
+    let id: number = 0;
     const cars = this.storageService.getCars();
+    const last = cars.reverse()[0];
+    if (last) id = last.id
+    car.id = ++id
     cars.push(car)
     this.storageService.saveCars(cars);
   }
@@ -20,26 +25,28 @@ export class CarService {
     return this.storageService.getCars();
   }
 
+  readCarById(id: number): ICar | undefined {
+    return this.readCars().find((value) => value.id === id);
+  }
+
   updateCar(car: ICar): void {
     const cars = this.storageService.getCars();
-    console.log(cars)
-    cars.map((value) => {
-      if (value.id === car.id) value = car
-      console.log(value)
-    });
-    console.log(cars)
+    cars.map((value, index) => {
+      if (value.id === car.id) {
+        cars.splice(index, 1, car)
+      }
+    })
     this.storageService.saveCars(cars)
   }
 
   deleteCar(id: number): void {
     const cars = this.storageService.getCars();
-    console.log(cars)
-    for (let i = 0; i < cars.length; i++) {
-      if (id === i) delete cars[i];
-    }
-    console.log(cars)
+    cars.map((value, index) => {
+      if (id === value.id) {
+        cars.splice(index, 1)
+      }
+    })
     this.storageService.saveCars(cars)
-
   }
 
 }
