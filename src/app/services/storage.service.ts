@@ -1,13 +1,11 @@
 import {Injectable} from '@angular/core';
+
 import {ICar} from "../interfaces/icar";
 
 @Injectable({
   providedIn: 'root'
 })
 export class StorageService {
-
-  constructor() {
-  }
 
   getCars(): ICar[] {
     const cars = localStorage.getItem("cars");
