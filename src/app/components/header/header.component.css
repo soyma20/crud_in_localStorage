@@ -1,0 +1,25 @@
+.header{
+  background: #232323;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+.header__logo{
+  color: white;
+  text-decoration: none;
+}
+.header__button{
+  font-weight: bold;
+  width: 150px;
+  height: 40px;
+  background: rgba(255, 255, 255, 1);
+  border: 2px solid #252525;
+  border-radius: 25px;
+  text-transform: uppercase;
+}
+.header__button:hover{
+  cursor: pointer;
+  background:  #bdb9b9;;
+}
