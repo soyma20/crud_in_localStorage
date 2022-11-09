@@ -1,0 +1,35 @@
+.form-group{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.form-group__input{
+  margin: 10px;
+  text-transform: uppercase;
+  width: 550px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.form-group__input>input{
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+  padding: 10px 10px;
+  letter-spacing: 1px;
+  outline: none;
+  border-radius: 5px;
+}
+.form-group__button{
+  font-weight: bold;
+  width: 100px;
+  padding: 10px 0;
+  background: #ffffff;
+  border: 2px solid #252525;
+  border-radius: 25px;
+  text-transform: uppercase;
+}
+.form-group__button:hover{
+  cursor: pointer;
+  background: #bdb9b9;
+}

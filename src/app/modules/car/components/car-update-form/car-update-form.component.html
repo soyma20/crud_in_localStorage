@@ -1,0 +1,12 @@
+<form [formGroup]="form" class="form-group">
+  <label class="form-group__input">model (At least 3 symbols):
+    <input type="text" formControlName="model" placeholder="model" required minlength="3">
+  </label>
+  <label class="form-group__input">price (From 1 to 200 000 000):
+    <input type="number" formControlName="price" placeholder="price" required>
+  </label>
+  <label class="form-group__input">year (From 1900 to present):
+    <input type="number" formControlName="year" placeholder="year" required>
+  </label>
+  <button class="form-group__button" [disabled]="form.invalid" (click)="saveCar()">save</button>
+</form>

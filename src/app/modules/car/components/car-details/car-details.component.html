@@ -1,0 +1,13 @@
+<div class="wrapper">
+  <div class="car_card">
+    <p class="car_card__model">Car model: {{car.model}}</p>
+    <p class="car_card__model">Price in USD: {{car.price}}</p>
+    <p class="car_card__model">Price in UAH: {{car.price|uah:40}}</p>
+    <p class="car_card__model">Year: {{car.year}}</p>
+    <p class="car_card__model">Car is {{car.year| age}} old</p>
+    <button class="car_card__button" (click)="updateCar()">update</button>
+  </div>
+  <ng-container *ngIf="update">
+    <app-car-update-form [carToUpdate]="car" (updateEmitter)="catchUpdateEmitter($event)"></app-car-update-form>
+  </ng-container>
+</div>
